@@ -15,10 +15,88 @@
     </style>
 </head> 
 <body>
-    <img src="./images/profile.jpg" width="" height="400">
+    <img src="./images/profile.jpg" width="100" height="120">
     <h1>안녕하세요 차재민입니다.</h1>
     <h2>Jaemin Cha Portfolio</h2>
-    <p>제가 만든 첫 포트폴리오입니다.</p>
+    <p>
+        <img src="./images/unity.png" width="50" height="50">
+        <span style="background-color:hotpink; color: #f5f5f5;">유니티</span>,
+        <span style="background-color:hotpink; color: #f5f5f5;">그래픽스 프로그래밍</span>을 배웁니다.</p>
     </body> 
+
+<body>
+    <h1>커리어 소개</h1>
+    <h2>&#x2022; 학부연구생 인턴</h2>
+    <p>2021.12-2022.06</p>
+    <p>역할: VR Classroom(VR환경 교육용 소프트웨어)에서 화이트보드 기능 구현</p>
+    <p>기술스택: <img src="./images/unity.png" width="50" height="50">
+        Unity(C#)</p>
+    <img src="./images/VRClassroom1.png">
+    <p>&#x2022; Photon Library를 이용해 멀티플레이어 환경 구현</p>
+    <p>Unity에서 멀티플레이어 게임을 위해 Photon 환경을 setup 했습니다. <br>
+        위쪽 사진은 Player1의 시점이고, 아래쪽 사진은 player2가
+        Player1을 바라본 시점입니다.
+    </p>
+    <p>
+        &#x2022; VR controller를 이용해 선 그리기 기능 구현 <br>
+        <img src="./images/VRClassroom2.png"><br>
+        아래 사진은 Reference Project의 Line Rendering 기능입니다<br>
+        이 프로젝트를 참고해서 만든 Line Rendering 기능이 위 사진입니다.<br>
+        line을 정의하기 위해 필요한 최소한의 길이(minimum spacing)제한이 있어서<br>
+        깔끔하지는 않지만, 컨트롤러를 이용해 사용자가 버튼을 누르면 선을 그릴 수 있도록 만들었습니다.
+        
+    </p>
+
+    <h2>&#x2022; 듀코젠 유니티 클라이언트 인턴십</h2>
+    <p>2022.07-09 </p>
+    <p>역할: 한국관광공사와 협업해서 한국관광,K Food 문화를 홍보하는 월드를 만들었습니다.</p>
+    <p>기술스택: <img src="./images/unity.png" width="50" height="50">
+        Unity(C#), hlsl(쉐이더 작성)</p>
+    
+    <p>&#x2022; 랭킹 리더보드 제작</p>
+    <p>유저들의 게임 내 점수에 따라 랭킹 보드를 만들고 싶다는 의견에 따라 유저들의 이름, 점수, 랭크를 받아와서 게시했습니다.</p>
+    <img src="./images/ZepetoLeaderBoard.png">
+    <p>&#x2022; 보트 시뮬레이션 제작</p>
+    <p>월드 중에 물 위에서 보트를 타고 싶다는 의견이 있어서, 폭포에서 보트를 타는 기능을 구현했습니다.</p>
+    <img src="./images/ZepetoBoat.png"> <br>
+    <img src="./images/ZepetoBoat2.png"> <br>
+    <p> displacementMultiplier: 보트의 gravity가 얼마나 강하게 움직이는지를 결정합니다. <br>
+    this.boatHeight(현재 수면의 높이) - this.transform.position(보트의 현재 높이)를 계산합니다.<br>
+    보트가 수면보다 높이 있는 경우에는, 아래방향으로 보트를 움직입니다. <br>
+    보트가 수면보다 낮게 있는 경우에는, 물에 잠긴 배가 떠오르듯이 위로 보트를 움직입니다.
+    </p>
+    <img src="./images/ZepetoBoat3.png"><br>
+    <p>수면의 높이를 계산하는 과정입니다. <br>
+    ray cast를 이용해 보트의 밑바닥에서 중력 방향으로 광선을 발사합니다.<br>
+    광선이 수면과 부딪히면, 해당 수면의 높이를 새로 저장합니다.</p>
+
+    <img src="./images/ZepetoBoat4.png.jpg" width="500",height="500">
+    <img src="./images/ZepetoBoat5.png.jpg" width="500",height="500"> 
+    <p>왼쪽: 보트가 수면 위인 경우-> raycasting시 수면의 높이 업데이트<br>
+    오른쪽: raycasting시 hit이 되는 물체가 없으므로, 가장 최근의 수면의 높이를 사용함.
+    </p>
+
+    <p>이 방식은 평면에서는 boatheight가 동일하기 때문에 큰 효과가 없지만,
+        폭포의 경사면에서는 계속해서 수면의 높이가 변합니다 <br>
+        그래서 Raycasting으로 움직일 때마다 수면의 높이를 새로 계산했습니다.
+    </p>
+
+    <p>&#x2022; 망원경 제작</p>
+    <p>유저의 시점을 변경해서 맵 전체를 날아가는 새의 시점에서 볼 수 있도록 만들었습니다.</p>
+    <img src="./images/ZepetoTelescope.png"><br>
+    <img src="./images/ZepetoTelescope2.png">
+    <p>먼저, 카메라가 이동할 경로에 10개의 피벗을 지정합니다. <br>
+    그리고 카메라를 0번째 피벗부터 다음 피벗까지 움직입니다<br>
+    이때 카메라의 위치와 회전은 Vector3.Slerp, Quaternion.Slerp로 부드럽게 연결했습니다. <br>
+    만약 Lerp를 사용하면 직선 경로로 불연속적으로 움직이기 때문에 부자연스럽습니다. <br>
+
+    <img src="./images/ZepetoTelescopeLinear.png"width="500",height="500">
+ 
+    <img src="./images/ZepetoTelescope3.png"width="500",height="500">
+    <p>(왼쪽)Linear Interpolation으로 정의한 path <br>
+        (오른쪽)Slerp(Spherical Linear Interpolation)으로 정의한 path</p>
+
+
+</body>
 
 </html>
