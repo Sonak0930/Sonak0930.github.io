@@ -48,8 +48,6 @@ additional_links:
 # about_title: About Me
 about_profile_image: images/profile.jpg
 about_content: | # this will include new lines to allow paragraphs
-  안녕하세요, 저는 차재민입니다.
-  유니티 클라이언트와 그래픽스 프로그래밍 경험이 있습니다.
   I am most skilled in: <mark>AWS</mark> and <mark>Eating Pizza</mark>
 
 content:
